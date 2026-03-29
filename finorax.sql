@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2026 at 08:43 AM
+-- Generation Time: Mar 29, 2026 at 11:56 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,6 +36,12 @@ CREATE TABLE `ai_logs` (
   `priority` varchar(20) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `financial_profiles`
+--
 
 CREATE TABLE `financial_profiles` (
   `id` int(11) NOT NULL,
@@ -72,6 +78,12 @@ CREATE TABLE `financial_profiles` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transactions`
+--
+
 CREATE TABLE `transactions` (
   `id` int(11) NOT NULL,
   `user_id` varchar(50) NOT NULL,
@@ -84,6 +96,12 @@ CREATE TABLE `transactions` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `user_id` varchar(50) DEFAULT NULL,
@@ -93,15 +111,6 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `dob` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `user_id`, `name`, `phone_number`, `email`, `password`, `dob`) VALUES
-(3, 'FX-707900', 'Ankit Sarkar', '8597959264', 'ankitsarkar120706@gmail.com', '$2y$10$FfgEjzQWxLp3AeAWAiIvhO7Izle7TuzckyWpmh9C/QTmH6k9ZHclm', '2026-03-12'),
-(4, 'FX-543253', 'Ankit Sarkar', '8597959264', 'ankitsarkarg706@gmail.com', '$2y$10$jPfmq6dLd4Kknv1pNTL.7erBpLeppp9KS1op4dHCSCYImY91MnS/y', '2026-03-20'),
-(5, 'FX-494560', 'Ankit Sarkar', '8597959264', 'ankitsarkar120t@mail.com', '$2y$10$2bU5Dj5XS03ZHjH9mmzKYOthnmc3CD3NkZbHQ/F7PuhVmDIIDSrGO', '2026-10-21');
 
 --
 -- Indexes for dumped tables
@@ -161,7 +170,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
